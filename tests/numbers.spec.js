@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const numbers = require('../src/numbers');
+const numbers = require("../src/numbers");
 
 /*
   A função `numbers` recebe um array de tamanho variável e retorna `true` se todos os parâmetros forem do tipo 'number' e `false` caso contrário.
@@ -14,35 +14,24 @@ const numbers = require('../src/numbers');
 
 */
 
-describe('2 - Implemente os casos de teste para a função `numbers`', () => {
-  it('Verifica se a função `numbers` retorna `true` quando o array contém apenas números e falso caso contrário', () => {
-    
+describe("2 - Implemente os casos de teste para a função `numbers`", () => {
+  it("Verifica se a função `numbers` retorna `true` quando o array contém apenas números e falso caso contrário", () => {
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     expect(numbers([1, 2, 3, 4, 5])).toBeTruthy();
-   
+
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
     // Escreva um teste em que a função recebe [' '] e retorna false
   });
 
-  it('verifica se a função `numbers` retorna `false` qunado o array contém string no lugar de números.', () => {
-
-    expect(numbers([1, 2, '3', 4, 5])).toBeFalsy();
-
+  it("verifica se a função `numbers` retorna `false` qunado o array contém string no lugar de números.", () => {
+    expect(numbers([1, 2, "3", 4, 5])).toBeFalsy();
   });
 
   it("verifica se a função recebe [1,'a', 3] e retorna false", () => {
-
-    expect(numbers([1, 'a', 3])).toBeFalsy();
-
-
+    expect(numbers([1, "a", 3])).toBeFalsy();
   });
 
   it("verifica se a função recebe [''] e retorna false", () => {
-
-    expect(numbers([''])).toBeFalsy();
-
-
-  })
-
+    expect(numbers([""])).toBeFalsy();
+  });
 });
-
