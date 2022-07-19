@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 
-const circle = require('../src/circle');
+const circle = require("../src/circle");
 
 /*
   A função `circle` recebe o raio de um círculo e retorna um objeto contendo suas informações: Raio, Área e Circunferência.
@@ -21,16 +21,50 @@ const circle = require('../src/circle');
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
 
-describe('4 - Implemente os casos de teste para a função `circle`', () => {
-  it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
-    // Teste se circle retorna um objeto.
-    // Teste se o objeto retornado possui 3 propriedades.
-    // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
-    // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
-    // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
+describe("4 - Implemente os casos de teste para a função `circle`", () => {
+  // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
+
+  it("Verifica se circle retorna undefined, caso o parâmetro passado não seja um número.", () => {
+    expect(circle("")).toBeUndefined();
+  });
+
+  // Teste se circle retorna um objeto.
+
+  it("Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados", () => {
+    expect(typeof circle(2)).toBe("object");
+  });
+
+  // Teste se o objeto retornado possui 3 propriedades.
+
+  it("Verifica se o objeto retorna 3 propriedades", () => {
+    expect(Object.keys(circle(3)).length).toBe(3);
+  });
+
+  // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+it("Verifica se a função quando não recebe nenhum parâmetro, retorna undefined",() => {
+
+  expect(circle()).toBeUndefined;
+
+});
+
+  // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
+  it("verifica se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.", ()=>{
+
+    expect(circle(2).circumference).toBeCloseTo(12.56);
+
+  })
+  // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
+  it("verifica se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.",() =>{
+    
+    expect(circle(3).area).toBeCloseTo(28.26);
+    
+    
+      });
+  // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
+
+  it("verifica se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.", () =>{
+  
+    expect(circle(3)).toBe({ radius: 3, area: 28.259999999999998, circumference: 18.84 });
+
   });
 });
