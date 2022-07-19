@@ -60,8 +60,8 @@ it('Verifica se o array retornado pela função contém dois itens dentro.', () 
 
 it('verifica se os dois itens dentro do array retornado pela função são objetos.', ()=>{
 
-  expect( typeof( productDetails('alcool', 'mascara')[0])).toBe('object')
-  expect( typeof( productDetails('alcool', 'mascara')[1])).toBe('object')
+  expect( typeof( productDetails('alcool', 'mascara')[0])).toBe('object');
+  expect( typeof( productDetails('alcool', 'mascara')[1])).toBe('object');
 
 })    
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
